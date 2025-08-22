@@ -1,0 +1,19 @@
+
+// Menú responsive
+const toggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Scroll suave
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
